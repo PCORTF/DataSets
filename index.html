@@ -50,10 +50,9 @@
         <script>
          function format_link(link) {
             if (link)
-                return "<a href='" + link + "' target='_blank'>" + link + "</a>";
+                return "<a href='" + link + "'target='_blank'>" + link + "</a>";
             else return "";
         }
-
         CsvToHtmlTable.init({
             csv_path: "data/data_streams_V5.csv",
             element: "table-container",
@@ -64,15 +63,11 @@
             },
             datatables_options: {
                 paging: true,
-                 "columnDefs": [
-                        // { "width": "200px", "targets": 0 },
-                        // { "width": "40px", "targets": 1 },
-                        // { "width": "200px", "targets": 2 },
-                        // { "width": "70px", "targets": 3 },
-                        { "width": "700px", "targets": 3 },
-                        { "width": "700px", "targets": 4 }
-    ],
             },
+            "columnDefs": [
+                {"width": "200px", "targets": 3},
+                {"width": "1000px", "targets": 4},
+            ],
             custom_formatting: [
                 [7, format_link]
             ]
